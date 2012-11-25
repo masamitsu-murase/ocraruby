@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+  <assemblyIdentity name="cscript.exe" version="1.0.0.0" type="win32" />
+  <file name="AutoItX3.dll">
+    <typelib tlbid="{f8937e53-d444-4e71-9275-35b64210cc3b}" version="1.0" helpdir="" />
+    <comClass clsid="{1a671297-fa74-4422-80fa-6c5d8ce4de04}" threadingModel="Apartment" tlbid="{f8937e53-d444-4e71-9275-35b64210cc3b}" progid="AutoItX3.Control" description="AutoItX3 Class" />
+  </file>
+</assembly>

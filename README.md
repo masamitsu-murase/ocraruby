@@ -7,10 +7,21 @@ Please download executable binaries from [Download Page](https://github.com/masa
 
 * **ocraruby.exe**  
   This includes frequently used (and my favorite) standard libraries except for network libraries.  
-  Please refer to `src/ocra_loader_libs.rb` to find included libraries.
+  Please refer to `src/ocra_loader_libs.rb` to find included libraries.  
+  This also includes [AutoIt](http://www.autoitscript.com/site/autoit/).  
+  You can use AutoIt COM as follows:  
+```ruby
+# AutoIt sample
+require("win32ole")
+
+autoit = WIN32OLE.new("AutoItX3.Control")
+autoit.Run("calc.exe")
+autoit.WinWaitActive("[CLASS:SciCalc]")
+autoit.Send("3{+}4{ENTER}")
+```
 
 * **ocrarubyfull.exe**  
-  This includes all standard libraries.
+  This includes all standard libraries and [AutoIt](http://www.autoitscript.com/site/autoit/).  
 
 * **ocrarubylite.exe**  
   This includes no standard libraries.
