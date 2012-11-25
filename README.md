@@ -9,7 +9,8 @@ Please download executable binaries from [Download Page](https://github.com/masa
   This includes frequently used (and my favorite) standard libraries except for network libraries.  
   Please refer to `src/ocra_loader_libs.rb` to find included libraries.  
   This also includes [AutoIt](http://www.autoitscript.com/site/autoit/).  
-  You can use AutoIt COM as follows:  
+  You can use AutoIt COM as follows:
+
 ```ruby
 # AutoIt sample
 require("win32ole")
