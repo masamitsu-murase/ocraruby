@@ -50,7 +50,7 @@ elsif (ARGV[0].start_with?("-") && process_options(ARGV[0]))
   exit
 end
 
-filename = ARGV[0]
+filename = File.expand_path(ARGV[0])
 reset_environment(filename)
 load(filename)
 
