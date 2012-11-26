@@ -9,7 +9,7 @@ Please download executable binaries from [Download Page](https://github.com/masa
   This includes frequently used (and my favorite) standard libraries except for network libraries.  
   Please refer to `src/ocra_loader_libs.rb` to find included libraries.  
   This also includes [AutoIt](http://www.autoitscript.com/site/autoit/).  
-  You can use AutoIt COM as follows:
+  You can use AutoIt COM *without* registering via regsvr32.exe as follows:
 
 ```ruby
 # AutoIt sample
@@ -58,12 +58,16 @@ sample.rb
 ## Credits
 
 Ocraruby executable binary is built with [RubyInstaller](http://rubyinstaller.org/) and [OCRA](https://github.com/larsch/ocra).  
+It also includes [AutoIt](http://www.autoitscript.com/site/autoit/).
 
 RubyInstaller is a Ruby execution environment on Windows.  
 Thank you, RubyInstaller Team.
 
 OCRA is a great library to build Windows executable binary from Ruby script.  
-Thank you, Lars Christensen, OCRA author.  
+Thank you, Lars Christensen, OCRA author.
+
+AutoIt is a GUI automation tool.  
+Thank you, Jonathan Bennett, AutoIt author.
 
 Ruby is a dynamic, open source programming language with a focus on simplicity and productivity.  
 Thank you, Matz and Ruby developer team.
