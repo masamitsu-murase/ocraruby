@@ -11,6 +11,9 @@ LIB = ocra_loader_libs.rb
 EXE_LITE = ../bin/ocrarubylite.exe
 EXE_NORMAL = ../bin/ocraruby.exe
 EXE_FULL = ../bin/ocrarubyfull.exe
+DLL_FULL = --dll libeay32.dll --dll libgdbm-3.dll --dll libgdbm_compat-3.dll \
+           --dll libiconv-2.dll --dll pdcurses.dll --dll ssleay32.dll \
+           --dll tcl85.dll --dll tclpip85.dll --dll tk85.dll
 
 
 all: $(EXE_LITE) $(EXE_NORMAL) $(EXE_FULL)
@@ -25,5 +28,5 @@ $(EXE_NORMAL): $(SRC) $(LIB)
 	$(OCRA) $(SRC) --dll AutoItX3.dll --dll ruby.exe.manifest --output $(EXE_NORMAL) -- normal
 
 $(EXE_FULL): $(SRC)
-	$(OCRA) $(SRC) --dll AutoItX3.dll --dll ruby.exe.manifest --add-all-core --output $(EXE_FULL) -- full
+	$(OCRA) $(SRC) --dll AutoItX3.dll --dll ruby.exe.manifest $(DLL_FULL) --add-all-core --output $(EXE_FULL) -- full
 
