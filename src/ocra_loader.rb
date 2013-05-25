@@ -19,38 +19,41 @@ if (defined?(Ocra))
 end
 
 #----------------------------------------------------------------
-def usage
-  exe_name = File.basename(ENV["OCRA_EXECUTABLE"])
-  puts "Usage: #{exe_name} [-v|-h] [programfile] [arguments]"
-end
+module Ocraruby
+  class << self
+    def usage
+      exe_name = File.basename(ENV["OCRA_EXECUTABLE"])
+      puts "Usage: #{exe_name} [-v|-h] [programfile] [arguments]"
+    end
 
-def process_options(option)
-  case(option)
-  when "-v", "--version"
-    puts "#{OCRARUBY_NAME} (#{OCRARUBY_LOADER_OPTION}) #{OCRARUBY_VERSION} - #{RUBY_VERSION}p#{RUBY_PATCHLEVEL} (#{RUBY_RELEASE_DATE}) [#{RUBY_PLATFORM}]"
-    return true
-  when "-h", "--help"
-    usage
-    return true
-  else
-    return false
+    def process_options(option)
+      case(option)
+      when "-v", "--version"
+        puts "#{OCRARUBY_NAME} (#{OCRARUBY_LOADER_OPTION}) #{OCRARUBY_VERSION} - #{RUBY_VERSION}p#{RUBY_PATCHLEVEL} (#{RUBY_RELEASE_DATE}) [#{RUBY_PLATFORM}]"
+        return true
+      when "-h", "--help"
+        usage
+        return true
+      else
+        return false
+      end
+    end
+
+    def reset_environment(filename)
+      $0 = filename
+      ARGV.shift
+    end
   end
-end
-
-def reset_environment(filename)
-  $0 = filename
-  ARGV.shift
 end
 
 #----------------------------------------------------------------
 if (ARGV.empty?)
-  usage
+  Ocraruby.usage
   exit
-elsif (process_options(ARGV[0]))
+elsif (Ocraruby.process_options(ARGV[0]))
   exit
 end
 
 filename = File.expand_path(ARGV[0])
-reset_environment(filename)
+Ocraruby.reset_environment(filename)
 load(filename)
-
