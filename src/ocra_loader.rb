@@ -46,7 +46,7 @@ end
 if (ARGV.empty?)
   usage
   exit
-elsif (ARGV[0].start_with?("-") && process_options(ARGV[0]))
+elsif (process_options(ARGV[0]))
   exit
 end
 
