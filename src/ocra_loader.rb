@@ -2,7 +2,7 @@
 
 OCRARUBY_LOADER_OPTION = ARGV.shift
 OCRARUBY_NAME = "ocraruby"
-OCRARUBY_VERSION = "1.2"
+OCRARUBY_VERSION = "1.3"
 
 if (defined?(Ocra))
   case(OCRARUBY_LOADER_OPTION)
