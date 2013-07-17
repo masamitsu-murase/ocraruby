@@ -13,7 +13,7 @@ EXE_LITE = ../bin/ocrarubylite.exe
 EXE_NORMAL = ../bin/ocraruby.exe
 EXE_FULL = ../bin/ocrarubyfull.exe
 DLL_FULL = --dll libeay32.dll --dll libgdbm-3.dll --dll libgdbm_compat-3.dll \
-           --dll libiconv-2.dll --dll pdcurses.dll --dll ssleay32.dll \
+           --dll libyaml-0-2.dll --dll libiconv-2.dll --dll pdcurses.dll --dll ssleay32.dll \
            --dll tcl85.dll --dll tclpip85.dll --dll tk85.dll
 
 
