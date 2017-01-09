@@ -2,14 +2,19 @@
 
 OCRARUBY_LOADER_OPTION = ARGV.shift
 OCRARUBY_NAME = "ocraruby"
-OCRARUBY_VERSION = "1.3"
+OCRARUBY_VERSION = "1.4"
 
 if (defined?(Ocra))
   case(OCRARUBY_LOADER_OPTION)
   when "lite"
     # nothing to do
   when "normal"
-    load("ocra_loader_libs.rb")
+    File.open(File.join(__dir__, "additional_libraries.txt"), "r") do |file|
+      file.each_line do |line|
+        line = line.strip
+        require(line.chomp) unless line.empty?
+      end
+    end
   when "full"
     # nothing to do
   else

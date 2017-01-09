@@ -6,10 +6,10 @@ require("test/unit")
 
 class OcrarubyTest < Test::Unit::TestCase
   RUBY_PATH = "ruby"
-  BIN_PATH = Pathname(__FILE__).parent.parent + "bin"
+  BIN_PATH = Pathname(__dir__).parent + "bin"
   OCRARUBY_PATH = BIN_PATH + "ocraruby"
 
-  TEMP_DIR = (Pathname(__FILE__).parent + "temp").expand_path
+  TEMP_DIR = (Pathname(__dir__) + "tmp").expand_path
   TEMP_DIR.mkpath
 
   def save_tempfile(str)
