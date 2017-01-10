@@ -41,8 +41,12 @@ class OcraBuilderBase
     @libs.push(lib)
   end
 
-  def add_gem(gem, version: nil)
-    @ruby.install_gem(gem, version: version)
+  def add_gem(gem, version: nil, local_file_path: nil, platform: nil)
+    if local_file_path
+      @ruby.install_gem(local_file_path, version: version, platform: platform)
+    else
+      @ruby.install_gem(gem, version: version, platform: platform)
+    end
     @gems.push([ gem, version ])
   end
 
