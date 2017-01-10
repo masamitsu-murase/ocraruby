@@ -37,7 +37,7 @@ class OcraBuilderFull < OcraBuilderFixedStub
 
   def build
     dlls = Dir.glob(File.join(@ruby_dir, "bin", "*.dll")).to_a
-      .select{ |i| !(i.start_with?("msvcrt")) }.map{ |i| File.basename(i) }
+      .map{ |i| File.basename(i) }.select{ |i| !(i.start_with?("msvcrt")) }
 
     build_binary(EXE_NAME, dlls, "--add-all-core", "full")
   end
